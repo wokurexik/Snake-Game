@@ -6,7 +6,6 @@ const rangeInput = document.getElementById('rangeInput');
 const currentValueSpan = document.getElementById('currentValue');
 const randomButton = document.getElementById('randomButton');
 const snakeColorPicker = document.getElementById('snakeColor');
-const snake = document.getElementsByClassName('snake');
 
 currentValueSpan.textContent = rangeInput.value;
 

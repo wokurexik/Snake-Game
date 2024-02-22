@@ -5,7 +5,11 @@ import{ outsideGrid } from './grid.js'
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
+const backgroundColor = document.getElementById('backgroundColor')
 
+backgroundColor.addEventListener('input', function(){
+    draw(document.getElementById('game-board'));
+})
 
 function main(currentTime) {
     
@@ -39,6 +43,7 @@ function update() {
 
 function draw() {
     gameBoard.innerHTML = ''
+    gameBoard.style.backgroundColor = backgroundColor.value
     drawSnake(gameBoard)
     drawFood(gameBoard)
 }

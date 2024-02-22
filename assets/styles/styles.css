@@ -66,6 +66,12 @@
             margin-bottom: auto;
             margin-left: 20px;
         }
+
+        #backgroundColor {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 20px;
+        }
         
         .score {
             color: white;
