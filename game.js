@@ -7,11 +7,11 @@ let gameOver = false
 const gameBoard = document.getElementById('game-board')
 
 
-
 function main(currentTime) {
     
     if (gameOver) {
-        if(confirm('You lose!' + " " + 'Tvé score je: ' + snakeBody.length)){
+        const score = snakeBody.length -1
+        if(confirm('You lose!' + " " + 'Tvé score je: ' + score )){
             window.location = '/'
         }
         return

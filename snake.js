@@ -1,9 +1,22 @@
 import { getInputDirection } from "./input.js"
 
-export const SNAKE_SPEED = 10 
-export const snakeBody = [{ x: 11, y: 11 }]   
 let newSegments = 0
 
+const rangeInput = document.getElementById('rangeInput');
+const currentValueSpan = document.getElementById('currentValue');
+
+currentValueSpan.textContent = rangeInput.value;
+
+let SNAKE_SPEED = parseInt(rangeInput.value); // Initialize SNAKE_SPEED with the initial value
+
+rangeInput.addEventListener('input', function() {
+    const newValue = parseInt(rangeInput.value); // Parse the value as an integer
+    currentValueSpan.textContent = newValue;
+    SNAKE_SPEED = newValue; // Update SNAKE_SPEED with the new value
+});
+
+export const snakeBody = [{ x: 11, y: 11 }];
+export { SNAKE_SPEED }; // Export SNAKE_SPEED
 
 
 
