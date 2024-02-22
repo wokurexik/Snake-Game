@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/styles/styles.css">
+    <link rel="stylesheet" href="../src/styles/styles.css">
     <title>Snake</title>
 
-<script src="../js/game.js" defer type="module"></script>
+<script src="./game.js" defer type="module"></script>
 
 </head>
 <body>
     <div class="container">
-        <div id="game-board"></div>
+        <div>
+            <div id="game-board"></div>
+            <h1 class="score">Score: <span id="score"></span></h1>
+        </div>
+
         <div id="settings">
-            <div class="set">
+            <div class="set" style="width: 500px;">
                 <p for="rangeInput">Snake speed:</p>
                 <input type="range" id="rangeInput" min="1" max="100" step="1" value="30">
               
                 <p><span id="currentValue">30</span></p>
             </div>
-            <div class="set">
+            <div class="set" style="width: 500px;">
                 <p for="rangeInputFood">Snake expansion:</p>
                 <input type="range" id="rangeInputFood" min="1" max="100" step="1" value="1">
               
@@ -30,11 +34,11 @@
                 <p for="snakeColor">Snake's head color:</p>
                 <input type="color" value="#1b201b" id="snakeHeadColor" >
                 <p style="margin-left: 20px;" for="snakeColor">Snake's body color:</p>
-                <input type="color" value="#1b201b" id="snakeColor" >
+                <input type="color" value="#6e826e" id="snakeColor" >
               
             </div>
             <div class="set" style="width: 500px";>
-                <p for="snakeColor">Snake's head color:</p>
+                <p for="snakeColor">Background color:</p>
                 <input type="color" value="#4e8a42" id="backgroundColor">
                 <p style="margin-left: 20px;" for="backgroundColor">Food color:</p>
                 <input type="color" value="#8e2929" id="foodColor">
@@ -42,15 +46,13 @@
             </div>
             <div class="random-div">
                 <div>
-                    <button id="randomButton">Random settings</button>
+                    <button class="rnd-button" id="randomButton">Random settings</button>
                 </div>
                 <div>
-                    <button id="randomButtonColors">Random colors</button>
+                    <button class="rnd-button"  id="randomButtonColors">Random colors</button>
                 </div>
             </div>
-            <div>
-                <h1 class="score">Score: <span id="score"></span></h1>
-            </div>
+           
         </div>
     </div>
 </body>
