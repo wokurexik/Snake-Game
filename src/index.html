@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <div>
+   
             <div id="game-board"></div>
             <div style="display: flex; justify-content: space-between;">
                 <h1 class="score">Score: <span id="score">0</span></h1>
@@ -24,13 +25,13 @@
             <div class="set" style="width: 500px;">
                 <p for="rangeInput">Snake speed:</p>
                 <input type="range" id="rangeInput" min="1" max="100" step="1" value="30">
-              
+                
                 <p><span id="currentValue">30</span></p>
             </div>
             <div class="set" style="width: 500px;">
                 <p for="rangeInputFood">Snake expansion:</p>
                 <input type="range" id="rangeInputFood" min="1" max="100" step="1" value="1">
-              
+                
                 <p><span id="currentValueFood">1</span></p>
             </div>
             <div class="set" style="width: 500px;">
@@ -55,7 +56,8 @@
                     <button class="rnd-button"  id="randomButtonColors">Random colors</button>
                 </div>
             </div>
-           
+            <h1 id="paused">Paused</h1>
+            
         </div>
     </div>
 </body>

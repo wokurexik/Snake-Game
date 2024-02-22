@@ -118,4 +118,22 @@
             gap: 20px;
             margin-top: 20px;
         }
+
+        #game-container {
+
+            width: 85vmin;
+            height: 85vmin;
+            position: relative;
+
+        }
         
+        #paused {
+            display: none;
+            color: black;
+            padding: 20Px ;
+            margin-top: 70px;
+            margin-inline: auto;
+            width: 300px;
+            text-align: center;
+            background-color: white;
+        }

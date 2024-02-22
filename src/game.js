@@ -9,6 +9,7 @@ const backgroundColor = document.getElementById('backgroundColor')
 const score = document.getElementById("score")
 const bestScore = document.getElementById("bestScore")
 
+
 backgroundColor.addEventListener('input', function(){
     draw(document.getElementById('game-board'));
 })
