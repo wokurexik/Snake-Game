@@ -35,7 +35,13 @@
 
         .container {
             display: flex;
-            
+        }
+
+        @media screen and (max-width: 1200px) {
+            .container {
+                display: block;
+            }
+
         }
 
         #settings {
@@ -90,7 +96,8 @@
         
         .score {
             color: white;
-            margin-top: 0Px;
+            margin-top: 20Px;
+            width: 240px;
         }
 
         .rnd-button {
