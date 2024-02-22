@@ -16,15 +16,23 @@
         <div id="settings">
             <div class="set">
                 <p for="rangeInput">Snake speed:</p>
-                <input type="range" id="rangeInput" min="0" max="100" step="1" value="30">
+                <input type="range" id="rangeInput" min="1" max="100" step="1" value="30">
               
                 <p><span id="currentValue">30</span></p>
             </div>
             <div class="set">
                 <p for="rangeInputFood">Snake expansion:</p>
-                <input type="range" id="rangeInputFood" min="0" max="100" step="1" value="1">
+                <input type="range" id="rangeInputFood" min="1" max="100" step="1" value="1">
               
                 <p><span id="currentValueFood">1</span></p>
+            </div>
+            <div class="set">
+                <p for="SnakeColor">Snake color:</p>
+                <input type="color" id="snakeColor" min="1" max="100" step="1" value="1">
+              
+            </div>
+            <div>
+                <button id="randomButton">Random settings</button>
             </div>
             <div>
                 <h1 class="score">Score: <span id="score"></span></h1>

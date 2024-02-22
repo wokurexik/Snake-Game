@@ -7,6 +7,7 @@ let food = getRandomFoodPostion()
 const score = document.getElementById("score")
 const rangeInput = document.getElementById('rangeInputFood');
 const currentValueSpan = document.getElementById('currentValueFood');
+const randomButton = document.getElementById("randomButton")
 
 currentValueSpan.textContent = rangeInput.value;
 
@@ -17,6 +18,16 @@ rangeInput.addEventListener('input', function() {
     currentValueSpan.textContent = newValue;
     EXPANSION_RATE = newValue; 
 });
+
+randomButton.addEventListener('click', function() {
+    const newValue = Math.floor(Math.random() * 100);
+    currentValueSpan.textContent = newValue
+    rangeInput.value = newValue
+    EXPANSION_RATE = newValue
+    console.log(`Random EXPANSION_RATE = ${newValue}`)
+})
+
+
 
 export function update() {
     if (onSnake(food)) {
