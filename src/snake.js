@@ -8,7 +8,7 @@ const randomButton = document.getElementById('randomButton');
 const snakeColorPicker = document.getElementById('snakeColor');
 const snakeHeadColor = document.getElementById('snakeHeadColor');
 const randomColors = document.getElementById('randomButtonColors');
-
+const rainbowColors = document.getElementById('rainbowButtonColors');
 
 currentValueSpan.textContent = rangeInput.value;
 
@@ -33,8 +33,9 @@ randomColors.addEventListener('click', function(){
     snakeColorPicker.value = '#'+Math.floor(Math.random()*16777215).toString(16);
     snakeHeadColor.value = '#'+Math.floor(Math.random()*16777215).toString(16);
     backgroundColor.value = '#'+Math.floor(Math.random()*16777215).toString(16);
-
+    foodColor.value = '#'+Math.floor(Math.random()*16777215).toString(16);
 })
+
 
 snakeColorPicker.addEventListener('input', function(){
     // Trigger the draw function to update the snake's color
@@ -69,7 +70,6 @@ export function draw(gameBoard) {
         snakeElement.style.gridRowStart = segment.y;
         snakeElement.style.gridColumnStart = segment.x;
         snakeElement.classList.add('snake');
-
         // Set the background color based on the segment's position
         if (index === 0) {
             snakeElement.style.backgroundColor = snakeHeadColor.value;

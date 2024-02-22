@@ -13,16 +13,16 @@ backgroundColor.addEventListener('input', function(){
     draw(document.getElementById('game-board'));
 })
 
+
+
 const topScore = [];
 let currentBestScore = localStorage.getItem("bestScore") || 0;
 
 // Display the initial best score when the page loads
 bestScore.textContent = "Best Score: " + currentBestScore;
-
 function main(currentTime) {
     
     if (gameOver) {
-
         const currentScore = parseInt(score.textContent);
         topScore.push(currentScore);
         topScore.sort((a, b) => b - a);
@@ -31,27 +31,31 @@ function main(currentTime) {
         // Update the best score only if it's a new best score
         if (topScoresToShow[0] > currentBestScore) {
             currentBestScore = topScoresToShow[0];
+           
             bestScore.textContent = "Best Score: " + currentBestScore;
 
             // Store the best score in localStorage
             localStorage.setItem("bestScore", currentBestScore);
         }
 
-        if(confirm('You lose!' + " " + 'Your score is: ' + score.textContent )){
-            location.reload();
+        if(alert('Your score is: ' + score.textContent )){
+            location.reload()
+        } else {
+            location.reload()
         }
 
-        return;
+        return
+
     }
     
-    window.requestAnimationFrame(main)
-    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
+    window.requestAnimationFrame(main);
+    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
+    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
 
-    lastRenderTime = currentTime
+    lastRenderTime = currentTime;
 
-    update()
-    draw()
+    update();
+    draw();
 }
 
 window.requestAnimationFrame(main)
