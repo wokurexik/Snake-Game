@@ -1,13 +1,14 @@
 import { onSnake, expandSnake, snakeBody } from './snake.js'
 import { randomGridPosition } from './grid.js'
 
-let food = getRandomFoodPostion()
+let food = getRandomFoodPosition()
 
 
 const score = document.getElementById("score")
 const rangeInput = document.getElementById('rangeInputFood');
 const currentValueSpan = document.getElementById('currentValueFood');
 const randomButton = document.getElementById("randomButton")
+const foodColor = document.getElementById("foodColor");
 
 currentValueSpan.textContent = rangeInput.value;
 
@@ -24,32 +25,36 @@ randomButton.addEventListener('click', function() {
     currentValueSpan.textContent = newValue
     rangeInput.value = newValue
     EXPANSION_RATE = newValue
-    console.log(`Random EXPANSION_RATE = ${newValue}`)
+    // console.log(`Random EXPANSION_RATE = ${newValue}`)
 })
 
+foodColor.addEventListener('input', function(){
+    // Trigger the draw function to update the snake's color
+    draw(document.getElementById('game-board'));
+});
 
 
 export function update() {
     if (onSnake(food)) {
         expandSnake(EXPANSION_RATE)
-        food = getRandomFoodPostion()
+        food = getRandomFoodPosition()
+        score.textContent = ++score.textContent
     }
-    score.textContent = snakeBody.length -1
-    // console.log(snakeBody.length)
 }
 
 export function draw(gameBoard) {
     const foodElement = document.createElement('div')
     foodElement.style.gridRowStart = food.y
     foodElement.style.gridColumnStart = food.x
+    foodElement.style.backgroundColor = foodColor.value
     foodElement.classList.add('food')
     gameBoard.appendChild(foodElement)
 }
 
-function getRandomFoodPostion() {
-    let newFoodPositon
-    while (newFoodPositon == null || onSnake(newFoodPositon)) {
-        newFoodPositon = randomGridPosition()
+function getRandomFoodPosition() {
+    let newFoodPosition
+    while (newFoodPosition == null || onSnake(newFoodPosition)) {
+        newFoodPosition = randomGridPosition()
     }
-    return newFoodPositon
+    return newFoodPosition
 }

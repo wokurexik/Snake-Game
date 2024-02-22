@@ -26,18 +26,27 @@
               
                 <p><span id="currentValueFood">1</span></p>
             </div>
-            <div class="set">
-                <p for="snakeColor">Snake color:</p>
-                <input type="color" id="snakeColor" >
+            <div class="set" style="width: 500px;">
+                <p for="snakeColor">Snake's head color:</p>
+                <input type="color" value="#1b201b" id="snakeHeadColor" >
+                <p style="margin-left: 20px;" for="snakeColor">Snake's body color:</p>
+                <input type="color" value="#1b201b" id="snakeColor" >
               
             </div>
-            <div class="set">
-                <p for="backgroundColor">Background color:</p>
-                <input type="color" id="backgroundColor">
+            <div class="set" style="width: 500px";>
+                <p for="snakeColor">Snake's head color:</p>
+                <input type="color" value="#4e8a42" id="backgroundColor">
+                <p style="margin-left: 20px;" for="backgroundColor">Food color:</p>
+                <input type="color" value="#8e2929" id="foodColor">
               
             </div>
-            <div>
-                <button id="randomButton">Random settings</button>
+            <div class="random-div">
+                <div>
+                    <button id="randomButton">Random settings</button>
+                </div>
+                <div>
+                    <button id="randomButtonColors">Random colors</button>
+                </div>
             </div>
             <div>
                 <h1 class="score">Score: <span id="score"></span></h1>

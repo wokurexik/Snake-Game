@@ -6,6 +6,7 @@ let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
 const backgroundColor = document.getElementById('backgroundColor')
+const score = document.getElementById("score")
 
 backgroundColor.addEventListener('input', function(){
     draw(document.getElementById('game-board'));
@@ -14,8 +15,8 @@ backgroundColor.addEventListener('input', function(){
 function main(currentTime) {
     
     if (gameOver) {
-        const score = snakeBody.length -1
-        if(confirm('You lose!' + " " + 'Tvé score je: ' + score )){
+
+        if(confirm('You lose!' + " " + 'Tvé score je: ' + score.textContent )){
             location.reload()
         }
         return

@@ -22,12 +22,12 @@
         }
 
         .snake {
-            background-color: hsla(120, 6%, 13%, 0.974);
+            background-color: rgba(27, 32, 27, 0.973);
             border: 1px solid black ;
         }
 
         .food {
-            background-color: hsla(0, 55%, 36%, 0.974);
+            background-color: rgba(142, 41, 41, 0.974);
             border: 3px solid black;
             border-radius: 50%;
         }
@@ -72,10 +72,27 @@
             margin-bottom: auto;
             margin-left: 20px;
         }
+
+        #snakeHeadColor {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 20px;
+        }
+
+        #foodColor {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 20px;
+        }
         
         .score {
             color: white;
             margin-top: 100Px;
         }
 
+        .random-div {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
         

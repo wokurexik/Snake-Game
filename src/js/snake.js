@@ -6,6 +6,9 @@ const rangeInput = document.getElementById('rangeInput');
 const currentValueSpan = document.getElementById('currentValue');
 const randomButton = document.getElementById('randomButton');
 const snakeColorPicker = document.getElementById('snakeColor');
+const snakeHeadColor = document.getElementById('snakeHeadColor');
+const randomColors = document.getElementById('randomButtonColors');
+
 
 currentValueSpan.textContent = rangeInput.value;
 
@@ -23,10 +26,22 @@ randomButton.addEventListener('click', function() {
     rangeInput.value = newValue;
     SNAKE_SPEED = newValue;
 
-    console.log(`Random SNAKE_SPEED = ${newValue}`);
+    // console.log(`Random SNAKE_SPEED = ${newValue}`);
 });
 
+randomColors.addEventListener('click', function(){
+    snakeColorPicker.value = '#'+Math.floor(Math.random()*16777215).toString(16);
+    snakeHeadColor.value = '#'+Math.floor(Math.random()*16777215).toString(16);
+    backgroundColor.value = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+})
+
 snakeColorPicker.addEventListener('input', function(){
+    // Trigger the draw function to update the snake's color
+    draw(document.getElementById('game-board'));
+});
+
+snakeHeadColor.addEventListener('input', function(){
     // Trigger the draw function to update the snake's color
     draw(document.getElementById('game-board'));
 });
@@ -49,12 +64,20 @@ export function draw(gameBoard) {
     // Remove existing snake elements
     document.querySelectorAll('.snake').forEach(element => element.remove());
 
-    snakeBody.forEach(segment => {
+    snakeBody.forEach((segment, index) => {
         const snakeElement = document.createElement('div');
         snakeElement.style.gridRowStart = segment.y;
         snakeElement.style.gridColumnStart = segment.x;
         snakeElement.classList.add('snake');
-        snakeElement.style.backgroundColor = snakeColorPicker.value; // Set the background color
+
+        // Set the background color based on the segment's position
+        if (index === 0) {
+            snakeElement.style.backgroundColor = snakeHeadColor.value;
+        } else {
+            snakeElement.style.backgroundColor = snakeColorPicker.value;
+        }
+
+        snakeElement.style.border = '3px solid black';
         gameBoard.appendChild(snakeElement);
     });
 }
