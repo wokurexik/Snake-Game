@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/styles/styles.css">
+    <title>Snake</title>
+
+<script src="../js/game.js" defer type="module"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div id="game-board"></div>
+        <div id="settings">
+            <div class="set">
+                <p for="rangeInput">Snake speed:</p>
+                <input type="range" id="rangeInput" min="0" max="100" step="1" value="30">
+              
+                <p><span id="currentValue">30</span></p>
+            </div>
+            <div class="set">
+                <p for="rangeInputFood">Snake expansion:</p>
+                <input type="range" id="rangeInputFood" min="0" max="100" step="1" value="1">
+              
+                <p><span id="currentValueFood">1</span></p>
+            </div>
+            <div>
+                <h1 class="score">Score: <span id="score"></span></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

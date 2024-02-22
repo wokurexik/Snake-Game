@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300&family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 150px;
+    font-weight: 700;
+    color: white;
+    margin: 50px;
+
+}
+
+.play {
+    font-family: "Montserrat";
+    font-size: 70px;
+    font-weight: 700;
+    color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    display: block;
+    border-color: aliceblue;
+    transition: all 0.8s ease 0s;
+    text-decoration: underline black;
+    cursor: pointer;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.play:hover {
+    background-color:  hsl(110, 40%, 35%);
+    text-decoration: underline hsl(110, 40%, 35%);
+}
+
+.easy{
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 70px;
+    font-weight: 700;
+    color: aliceblue;
+    margin: 50px;   
+}
