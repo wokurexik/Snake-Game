@@ -10,6 +10,7 @@ const snakeColorPicker = document.getElementById('snakeColor');
 const snakeHeadColor = document.getElementById('snakeHeadColor');
 const randomColors = document.getElementById('randomButtonColors');
 const paused = document.getElementById("paused")
+const countDownText = document.getElementById("countdown")
 
 currentValueSpan.textContent = rangeInput.value;
 
@@ -50,7 +51,7 @@ snakeHeadColor.addEventListener('input', function(){
 
 export const snakeBody = [{ x: 11, y: 11 }];
 export { SNAKE_SPEED , isPaused }; // Export SNAKE_SPEED
-
+let countdown = 3
 
 window.addEventListener('keydown', e => {
     switch (e.key) {
@@ -60,21 +61,41 @@ window.addEventListener('keydown', e => {
                 paused.style.display="block"
             } else {
                 paused.style.display="none"
-            }
+                startCountdown()
             break;
+            }
     }
 });
 
+function startCountdown() {
+    isPaused = true; // Set isPaused to true initially
+
+    countdown = 3;
+    const countdownInterval = setInterval(() => {
+        countDownText.style.display="block"
+        countDownText.textContent = countdown;
+        countdown--;
+        
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            countDownText.style.display="none"
+            isPaused = false; // Set isPaused to false once the countdown is complete
+        }
+
+    }, 600);
+}
 
 export function update() {
     if(!isPaused){
-
         addSegments();
         const inputDirection = getInputDirection();
+
+
         for (let i = snakeBody.length - 2; i >= 0; i--) {
             snakeBody[i + 1] = { ...snakeBody[i] };
-    } 
-    
+        } 
+        
+        
     snakeBody[0].x += inputDirection.x;
     snakeBody[0].y += inputDirection.y;
 }
