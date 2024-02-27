@@ -149,3 +149,14 @@
             background-color: white;
 
         }
+
+        .reset-button {
+            margin-left: 20px;
+            font-size: 20px;
+            padding-inline:15px;
+            background-color: rgba(54, 54, 54, 0.979);
+            border: 3px solid black;
+            color: white;
+            border-radius: 10px;
+        }
+
